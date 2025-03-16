@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oops! Fehler 404</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffcccb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .emoji {
+            font-size: 100px;
+            animation: shake 1s infinite;
+        }
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            50% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .message {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+        }
+        .home-link {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff5733;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        .home-link:hover {
+            background-color: #c70039;
+        }
+    </style>
+</head>
+<body>
+    <div class="emoji">🤯</div>
+    <div class="message">Oops! Seite nicht gefunden. Vielleicht ist sie im digitalen Nirvana verschwunden.</div>
+    <a href="/" class="home-link">Zurück zur Startseite</a>
+</body>
+</html>

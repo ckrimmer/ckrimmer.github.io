@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/newAboutMeStyleSheet.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> <!-- footer font -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> <!-- page-header font -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> <!-- text font -->
+    <title>Peter_Post</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/index.html" class="underline-hover">Peter's Projekte</a>
+            <a href="" id="toggleDarkModeIcon" class="navIcon" onclick="toggleDarkMode()">&#x1F319;</a>
+        </nav>
+    </header>
+    <main>
+        <div class="grid-container">
+            <div class="grid-item-text" id="first">
+                <h2>WER BIN ICH?</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo 
+                     <a href="#" class="inline-link" target="_blank"> dolores et ea rebum</a> [deer]
+                     Stet clita kasd gubergren, no sea takimata sanctus est.
+                </p>
+            </div>
+            <div class="grid-item-image" id="second">
+                <img src="/images/test3.png" alt="Bild von mir..">
+            </div>
+            <div class="grid-item-text" id="third">
+                <h2>Kompetenzen</h1>
+                <ul>
+                    <li><b>Lorem ipsum:</b> dolor ,  elitr, sed diam nonumy eirmod</li>
+                    <li><b>sit amet:</b> invidunt ut labore et</li>
+                    <li><b>consetetur sadipscing:</b> dolore magna aliquyam erat, sed diam</li>
+                </ul>   
+            </div>
+            <div class="grid-item-text" id="fourth">
+                <h2>Ausblick</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <section>
+            <a href="#" target="_blank" title="Folge auf Github">
+                <img src="/images/icons/github.png" class="ficon" alt="Github">
+            </a>
+            <a href="#" target="_blank" title="Folge auf LinkedIn">
+                <img src="/images/icons/linkedin.jpg" class="ficon" alt="LinkIn">
+            </a>
+            <a href="#" target="_blank" title="Folge auf Xing">
+                <img src="/images/icons/xing.jpg" class="ficon" alt="Xing">
+            </a>
+            <a href="#" target="_blank" title="Folge auf Pixelfed">
+                <img src="/images/icons/pixelfed.jpg" class="ficon" alt="Pixelfed">
+            </a>         
+            <a href="#" target="_blank" title="Folge auf YouTube">
+                <img src="/images/icons/youtube.jpg" class="ficon" alt="YouTube">
+            </a>
+        </section>
+        <section>
+            <a href="/legal.html">Impressum</a> <p>|</p>
+            <a href="/privacy.html">Datenschutz</a> <p>|</p>
+            <a href="/error.html">Cookies</a>
+        </section>
+    </footer>
+    <canvas id="neonCanvas"></canvas>
+    <script src="js/toggle.js"></script>
+    <script src="js/particle.js"></script>
+</body>
