@@ -7,11 +7,12 @@ function toggleDarkMode() {
 
     // Toggle the particle animation AND emoji
     const toggleIcon = document.getElementById('toggleDarkModeIcon');
+    const toggleGit = document.getElementById('toggleGitIcon');
     if (document.body.classList.contains('dark-mode')) {
         toggleIcon.innerHTML = '&#x2600;&#xFE0F;'; // Sonne
+        toggleGit.innerHTML = '<img src="/images/icons/3259374_github_media_social_icon.png" class="ficon" alt="Github">'; //SpaceGit
         startParticles();
     } else {
-        toggleIcon.innerHTML = '&#x1F319;'; // Mond
         stopParticles();
     }
 

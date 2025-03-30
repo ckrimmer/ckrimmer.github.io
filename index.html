@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/newProjectStyleSheet.css" rel="stylesheet">
+    <link href="css/project_style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> <!-- footer font -->
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap" rel="stylesheet"> <!-- page-header font -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> <!-- text font -->
-    <title>Peter's Projekte</title>
+    <title>Christian's Projekte</title>
 </head>
 <body>
+    <button id="backToTop" class="back-to-top">⬆</button>
     <header>
         <nav>
-            <a href="/aboutme.html" class="underline-hover" id="myName">Peter_Post</a>
-            <a href="/aboutme.html"><img src="/images/icons/Peter_Post_Icon.jpg"></a>
+            <a href="/aboutme.html" class="underline-hover" id="myName">Christian_Krimmer</a>
+            <a href="/aboutme.html"><img src="/images/icons/ck_icon.jpg"></a>
             <!-- <a href="#" class="navIcon">#️⃣</a>  -->
             <a href="/error.html" class="navIcon">&#x1F4E7;</a>
             <a href="" id="toggleDarkModeIcon" class="navIcon" onclick="toggleDarkMode()">&#x1F319;</a>
@@ -24,44 +25,48 @@
     </header>
     <main>
         <section class="image-text">
-            <img class="image" src="/images/test2.png">
+            <img class="image" src="/articles/blogs/pentest-bericht/pentest-image-hacker.jpg">
             <div class="text-container">
-                <p class="text-header">Zweiter Beitrag</p>
-                <p class="text-category">Kategorie 1 / Kategorie 2 / Kategorie 3</p>
+                <p class="text-header">Root-Zugriff als Prüfungsleistung</p>
+                <p class="text-category">Kali-Linux / Modul: Ethical Hacking</p>
                 <p class="text">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-                    <br> <a href="/articles/article-template.html" class="inline-link"> <i>weiterlesen...</i> </a>
+                    <strong>Wie bricht man in ein System ein – und wie schützt man es davor?</strong>
+                    Im Rahmen meines Ethical-Hacking-Moduls an der HKA hatte ich die Gelegenheit, meinen ersten eigenen Pentest-Bericht zu schreiben 
+                    – basierend auf einer speziellen TryHackMe-Challenge, die uns von Dozent (und Geheimdienstexperte) <a class="inline-link" href="https://www.cyberspionage.info">Florian Dalwigk</a> gestellt wurde. 
+                    Von OSINT über XSS bis zur Privilege Escalation – hier erfährst du, wie ich vorgegangen bin, 
+                    welche Tools ich genutzt habe und welche Erkenntnisse ich daraus mitgenommen habe. 🔥🚀
+                    <br> <a href="/articles/blogs/pentest-bericht/article2.html" class="inline-link"> <i>weiterlesen...</i> </a>
                 </p>
             </div>
         </section>
         <section class="text-image">
             <div class="text-container">
-                <p class="text-header">Erster Beitrag</p>
-                <p class="text-category">Kategorie 3 / Kategorie 4 / Kategorie 1</p>
+                <p class="text-header">Eigenes Videospiel programmiert</p>
+                <p class="text-category">Unity / C# / Seminararbeit</p>
                 <p class="text">
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    <br> <a class="inline-link"> <i>weiterlesen...</i> </a>
+                    Text ist noch in der Mache..
+                    <!-- <br> <a class="inline-link"> <i>weiterlesen...</i> </a> -->
                 </p>
             </div>
-            <img class="image" src="/images/test.png">
+            <img class="image" src="/articles/blogs/gis-game/cover.png">
         </section>
     </main>
     <footer>
         <section>
-            <a href="#" target="_blank" title="Folge auf Github">
-                <img src="/images/icons/github.png" class="ficon" alt="Github">
+            <a href="https://pixelfed.de/christian_03" target="_blank" title="Folge auf Pixelfed">
+                <img src="https://pixelfed.de/img/pixelfed-icon-color.svg" class="ficon2" alt="Pixelfed">
+            </a> 
+            <a href="https://www.linkedin.com/in/christian-krimmer-73264b334" target="_blank" title="Folge auf LinkedIn">
+                <img src="/images/icons/3057688_in_linked_media_social_icon.png" class="ficon" alt="LinkIn">
             </a>
-            <a href="#" target="_blank" title="Folge auf LinkedIn">
-                <img src="/images/icons/linkedin.jpg" class="ficon" alt="LinkIn">
+            <a href="https://github.com/Zuupie" target="_blank" id="toggleGitIcon" title="Folge auf Github">
+                <img src="/images/icons/401441_github_icon.png" class="ficon" alt="Github">
             </a>
-            <a href="#" target="_blank" title="Folge auf Xing">
-                <img src="/images/icons/xing.jpg" class="ficon" alt="Xing">
-            </a>
-            <a href="#" target="_blank" title="Folge auf Pixelfed">
-                <img src="/images/icons/pixelfed.jpg" class="ficon" alt="Pixelfed">
-            </a>         
-            <a href="#" target="_blank" title="Folge auf YouTube">
-                <img src="/images/icons/youtube.jpg" class="ficon" alt="YouTube">
+            <a href="https://www.xing.com/profile/Christian_Krimmer046177" target="_blank" title="Folge auf Xing">
+                <img src="/images/icons/1826186_brand_logo_network_social_xing_icon.png" class="ficon2" alt="Xing">
+            </a>   
+            <a href="https://youtube.com/@zuupieplay" target="_blank" title="Folge auf YouTube">
+                <img src="/images/icons/4375133_logo_youtube_icon.png" class="ficon" alt="YouTube">
             </a>
         </section>
         <section>
@@ -73,4 +78,5 @@
     <canvas id="neonCanvas"></canvas>
     <script src="js/toggle.js"></script>
     <script src="js/particle.js"></script>
+    <script src="js/backToTop.js"></script>
 </body>

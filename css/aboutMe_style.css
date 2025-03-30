@@ -1,7 +1,9 @@
 html{
     height: 100%;
     font-size: 100%;
-    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Avenir Next Regular',Helvetica,Arial,Lucida,sans-serif;
+    line-height: 1.5rem;
 }
 
 body{
@@ -29,10 +31,11 @@ header nav{
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 15px;
+    
 }
 
 header nav a{
-    margin: 0rem 1rem 0rem 0rem;
     font-family: 'Ubuntu Mono', monospace;
     font-size: 2rem;
     text-decoration: none;
@@ -133,7 +136,6 @@ ul{
     box-shadow: 6px 6px 18px 0px rgba(0,0,0,0.3);
     width: 80%;
     height: 100%;
-
     object-fit: cover;
 }
 
@@ -177,9 +179,20 @@ footer section a:hover{
 .ficon:hover{
     width: 35px;
     height: 35px;
-    filter: brightness(50%);
-    
+    filter: brightness(50%);   
 }
+
+.ficon2{
+    width: 33px;
+    height: 33px;
+}
+
+.ficon2:hover{
+    width: 30px;
+    height: 30px;
+    filter: brightness(50%); 
+}
+
 
 /* ---- extra stuff -----------*/
 .underline-hover {
