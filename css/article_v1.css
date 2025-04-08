@@ -74,6 +74,12 @@ main, section{
     padding: 0 20%;
 }
 
+main img{
+    width: 95%;
+    height: auto;
+    border-radius: 5px;
+}
+
 p {
     margin-bottom: 1.5rem;
     text-align: justify;
