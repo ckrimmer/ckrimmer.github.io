@@ -127,6 +127,19 @@ h4 {
     word-wrap: break-word;
 } */
 
+.inline-link{
+    text-decoration: none;
+    background: linear-gradient(to right, #006eff, #8800ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.inline-link:hover{
+    color: crimson;
+    font-size: large;
+}
+
 /*------Footer Area-------*/
 footer{
     margin-top: auto; /*footer stays at the bottom*/
