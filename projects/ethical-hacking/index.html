@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/article_v1.css" rel="stylesheet">
+     <!-- Prism.js für Syntax-Highlighting -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+    <title>Pentest-Bericht - Artikel</title>
+</head>
+<body>
+    <button id="backToTop" class="back-to-top">↑</button>
+    <header>
+        <a href="/" class="navIcon"><-</a> 
+        <h1>Root-Zugriff als Prüfungsleistung</h1> 
+        <a href="" id="toggleDarkModeIcon" class="navIcon" onclick="toggleDarkMode()">&#x1F319;</a>
+    </header>
+    <section>
+        <img class="article-image" src="/articles/blogs/pentest-bericht/pentest-image-hacker.jpg" alt="Artikelbild">
+    </section>
+    <main>
+        <p>
+            <strong>Wie ich gelernt habe, in Systeme einzubrechen – und sie zu schützen</strong>
+        </p>
+        <p>
+            <em>Hacking</em> – für viele klingt das nach Hollywood-Filmen, grünen Buchstaben auf schwarzem Bildschirm und mysteriösen Gestalten in Kapuzenpullis. 
+            Doch im Ethical-Hacking-Modul an der HKA durfte ich genau das tun – mit voller Erlaubnis. Mein Dozent, Florian Dalwigk, 
+            ein Experte für IT-Sicherheit und Geheimdienstmethoden, stellte uns eine besondere Challenge auf TryHackMe. Ziel war es, ein fiktives System zu hacken und alle Schwachstellen zu dokumentieren.
+            Klingt spannend? War es auch! In diesem Blogbeitrag nehme ich dich mit durch meinen ersten richtigen Pentest: 
+            Welche Schritte ich unternommen habe, welche Tools zum Einsatz kamen und welche Erkenntnisse ich daraus mitgenommen habe. 🔥
+        </p>
+        <hr>
+        <h3>Der Auftrag: Ein System kompromittieren – aber ethisch!</h3>
+        <p>
+            Ethical Hacking ist genau das, wonach es klingt: Hacking mit guten Absichten. Unternehmen lassen gezielt Systeme auf Schwachstellen prüfen, 
+            um diese zu schließen, bevor echte Angreifer sie ausnutzen können.
+            Unsere Aufgabe bestand darin, eine virtuelle Maschine auf TryHackMe zu analysieren und sie Schritt für Schritt zu kompromittieren. 
+            Dabei mussten wir verschiedene Angriffstechniken ausprobieren – von der Informationsbeschaffung bis hin zur Privilege Escalation, 
+            also dem Erlangen von Administratorrechten.
+            Für die Dokumentation mussten wir unsere Erkenntnisse in einem ausführlichen Pentest-Bericht festhalten – 
+            eine typische Aufgabe für Security-Analysten im echten Berufsleben.
+        </p>
+        <hr>
+        <h3>Die Angriffskette: So bin ich vorgegangen</h3>
+        <p>
+            Der gesamte Pentest folgte einer strukturierten Vorgehensweise, die auch in der Praxis genutzt wird:
+        </p>
+        <h4>1️⃣ Informationsbeschaffung (OSINT & Reconnaissance)</h4>
+        <p>
+            Bevor man ein System angreift, muss man es verstehen. Ich habe verschiedene Techniken genutzt, um Infos über mein Ziel zu sammeln:
+        </p>
+        <p>
+            <strong>🔍 nmap:</strong> Ein leistungsstarkes Tool zur Netzwerkerkundung. Damit habe ich offene Ports und laufende Dienste auf dem Server identifiziert.
+        </p>
+
+        <div class="code-block">
+            <pre><code class="language-bash">nmap -A -T4 <Ziel-IP></code></pre>
+        </div>
+        
+        <p>
+            <strong>📂 Gobuster:</strong> Ein Tool zum Auffinden versteckter Verzeichnisse auf Webseiten.
+        </p>
+
+        <div class="code-block">
+            <pre><code class="language-bash">gobuster dir -u http://<Ziel-IP> -w wordlist.txt</code></pre>
+        </div>
+
+        <h4>2️⃣ Erste Schwachstelle ausnutzen (Initial Exploitation)</h4>
+        <p>
+            Nach der Informationsbeschaffung ging es ans Eingemachte: Ich suchte nach einer Einstiegsmöglichkeit ins System.
+        </p>
+        <p>
+            <strong>🚨 XSS-Angriff:</strong> Ich fand eine unsichere Eingabemaske, die sich für einen Cross-Site-Scripting (XSS)-Angriff nutzen ließ. So konnte ich Schadcode direkt im Browser des Opfers ausführen.
+        </p>
+        
+        <div class="code-block">
+            <pre><code class="language-bash">&lt;script&gt;alert('Hacked!')&lt;/script&gt;</code></pre>
+        </div>
+
+        <h4>3️⃣ Zugriff auf den Server (Privilege Escalation)</h4>
+        <p>
+            Ein erster Zugriff reicht nicht – das Ziel ist es, Administratorrechte zu erlangen.
+        </p>
+        <p>
+            <strong>⚡ Exploiting SUID Binaries:</strong> Ich fand ein Programm mit falschen Berechtigungen, das ich ausnutzen konnte, um Root-Rechte zu erhalten.
+        </p>  
+            
+        <div class="code-block">
+            <pre><code class="language-bash">python3.8 -c 'import os; os.setuid(0); os.system("/bin/bash")'</code></pre>
+        </div>
+
+        <p>
+            <strong>🔑 SSH-Zugang sichern:</strong> Nach der Kontrolle über den Server erstellte ich einen neuen Benutzer mit Root-Rechten für den langfristigen Zugriff.
+        </p>  
+            
+        <div class="code-block">
+            <pre><code class="language-bash">sudo adduser hacker  
+usermod -aG sudo hacker </code></pre>
+        </div>
+
+        <hr>
+            <h3>Fazit: Was ich aus meinem ersten Pentest gelernt habe</h3>
+        <p>
+            <strong>✅ Hacken ist ein kreativer Prozess:</strong> Es gibt selten nur eine Lösung. Man muss um die Ecke denken, verschiedene Methoden ausprobieren und flexibel reagieren.
+        </p>
+        <p>
+            <strong>✅ Sicherheit ist ein ständiges Wettrüsten:</strong> Viele der genutzten Exploits basieren auf realen Schwachstellen. Ohne regelmäßige Updates und Härtung bleiben Systeme verwundbar.
+        </p>
+        <p>
+            <strong>✅ Dokumentation ist genauso wichtig wie das Hacken selbst:</strong> Ein guter Pentest-Bericht hilft Unternehmen, Schwachstellen zu verstehen und zu beheben – ohne eine klare Dokumentation bleibt das Wissen ungenutzt.
+        </p>
+        <p>
+            Diese Challenge hat mir nicht nur technisches Know-how vermittelt, sondern auch einen Einblick in die Denkweise von Angreifern und Sicherheitsexperten gegeben. Ethical Hacking ist nicht nur spannend, sondern auch essenziell für eine sichere digitale Zukunft.
+        </p>
+        <p>  
+            <strong>🔐 Meine wichtigste Erkenntnis:</strong> Ein System ist immer nur so sicher wie sein schwächstes Glied. Und oft ist das nicht die Technik, sondern der Mensch.
+        </p>
+    </main>
+    <footer>
+        <section>
+            <a href="https://pixelfed.de/christian_03" target="_blank" title="Folge auf Pixelfed">
+                <img src="https://pixelfed.de/img/pixelfed-icon-color.svg" class="ficon2" alt="Pixelfed">
+            </a> 
+            <a href="https://www.linkedin.com/in/christian-krimmer-73264b334" target="_blank" title="Folge auf LinkedIn">
+                <img src="/images/icons/3057688_in_linked_media_social_icon.png" class="ficon" alt="LinkIn">
+            </a>
+            <a href="https://github.com/Zuupie" target="_blank" id="toggleGitIcon" title="Folge auf Github">
+                <img src="/images/icons/401441_github_icon.png" class="ficon" alt="Github">
+            </a>
+            <a href="https://www.xing.com/profile/Christian_Krimmer046177" target="_blank" title="Folge auf Xing">
+                <img src="/images/icons/1826186_brand_logo_network_social_xing_icon.png" class="ficon2" alt="Xing">
+            </a>   
+            <a href="https://youtube.com/@zuupieplay" target="_blank" title="Folge auf YouTube">
+                <img src="/images/icons/4375133_logo_youtube_icon.png" class="ficon" alt="YouTube">
+            </a>
+        </section>
+        <section>
+            <a href="/legal.html">Impressum</a> <p>|</p>
+            <a href="/privacy.html">Datenschutz</a> <p>|</p>
+            <a href="/error.html">Cookies</a>
+        </section>
+    </footer>
+    <canvas id="neonCanvas"></canvas>
+    <script src="/js/toggle.js"></script>
+    <script src="/js/particle.js"></script>
+    <script src="/js/backToTop.js"></script>
+
+    <!-- Prism.js Scripts -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+</body>
